@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const ctrl = require('../controllers/orderController');
+const { adminAuth } = require('../middleware/authMiddleware');
+router.post('/', ctrl.createOrder);
+router.get('/', ctrl.listOrders);
+router.get('/:id', ctrl.getOrder);
+router.put('/:id/status', adminAuth, ctrl.updateOrderStatus);
+router.get('/table/:tableNumber', ctrl.ordersByTable);
+router.get('/:id/invoice', ctrl.generateInvoicePDF);
+module.exports = router;

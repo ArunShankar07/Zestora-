@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#121314" rx="20" />
+  <g transform="translate(60,60)">
+    <rect x="0" y="0" width="420" height="280" rx="18" fill="#3b2f1e" />
+    <circle cx="320" cy="140" r="70" fill="#f5c25d" />
+  </g>
+  <text x="60" y="420" fill="#ff7a00" font-size="56" font-family="Arial">Chicken Biriyani</text>
+</svg>

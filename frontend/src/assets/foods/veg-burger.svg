@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#0f1316" rx="20" />
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="360" height="240" rx="14" fill="#22322a" />
+    <circle cx="220" cy="120" r="80" fill="#9be56f" />
+  </g>
+  <text x="60" y="420" fill="#ff9a3c" font-size="60" font-family="Arial">Veg Burger</text>
+</svg>

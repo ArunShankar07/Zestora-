@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#0e0e10" rx="20" />
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="360" height="240" rx="14" fill="#2b1b1b" />
+    <rect x="140" y="80" width="120" height="80" rx="10" fill="#7a3b2b" />
+  </g>
+  <text x="60" y="420" fill="#ff8a3c" font-size="56" font-family="Arial">Chocolate Brownie</text>
+</svg>
