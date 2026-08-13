@@ -23,7 +23,41 @@ export default function Header(){
   return (
     <header className="topbar">
       <Link to="/" className="brand">
-        <div className="brand-icon">Z</div>
+        <div className="brand-icon" style={{display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden'}}>
+          <svg viewBox="0 0 60 60" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            {/* Outer circle - decorative ring */}
+            <circle cx="30" cy="30" r="28" fill="none" stroke="#000" strokeWidth="1.5"/>
+            
+            {/* Plate */}
+            <circle cx="30" cy="30" r="18" fill="none" stroke="#000" strokeWidth="2"/>
+            <circle cx="30" cy="30" r="15" fill="none" stroke="#000" strokeWidth="0.5" opacity="0.5"/>
+            
+            {/* Fork - left side */}
+            <g stroke="#000" strokeWidth="1.5" fill="none" strokeLinecap="round">
+              {/* Handle */}
+              <line x1="18" y1="15" x2="18" y2="38"/>
+              {/* Fork prongs */}
+              <g>
+                <line x1="16" y1="38" x2="16" y2="45"/>
+                <line x1="18" y1="38" x2="18" y2="45"/>
+                <line x1="20" y1="38" x2="20" y2="45"/>
+              </g>
+              {/* Fork base connector */}
+              <line x1="16" y1="38" x2="20" y2="38"/>
+            </g>
+            
+            {/* Spoon - right side */}
+            <g stroke="#000" strokeWidth="1.5" fill="none" strokeLinecap="round">
+              {/* Handle */}
+              <line x1="42" y1="15" x2="42" y2="35"/>
+              {/* Spoon bowl */}
+              <ellipse cx="42" cy="42" rx="4" ry="5"/>
+            </g>
+            
+            {/* Decorative center dot */}
+            <circle cx="30" cy="30" r="1.5" fill="#000"/>
+          </svg>
+        </div>
         <div>
           <div>ZESTORA</div>
           <div className="brand-subtitle">Dine & Order</div>

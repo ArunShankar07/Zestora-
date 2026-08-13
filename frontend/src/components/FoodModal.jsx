@@ -28,7 +28,8 @@ export default function FoodModal({ food, onClose }){
         alignItems:'center',
         justifyContent:'center',
         zIndex:1200,
-        padding: 16
+        padding: '16px',
+        overflowY: 'auto'
       }} 
       onClick={onClose}
       className="animate-fade-in"
@@ -36,27 +37,30 @@ export default function FoodModal({ food, onClose }){
       <div 
         className="card" 
         style={{
-          width:'min(840px, 96%)',
+          width:'min(680px, 95vw)',
+          maxHeight:'90vh',
           display:'flex',
-          gap:24,
+          gap:20,
           flexWrap: 'wrap',
-          padding: 24,
-          border: '1px solid var(--border-hover)'
+          padding: 20,
+          border: '1px solid var(--border-hover)',
+          overflow: 'hidden',
+          minHeight: 0
         }} 
         onClick={e => e.stopPropagation()}
       >
-        <div style={{flex:'1 1 340px', height: 320, borderRadius: 14, overflow: 'hidden', background: 'var(--bg-surface)'}}>
+        <div style={{flex:'1 1 280px', minWidth:240, maxHeight:280, borderRadius: 14, overflow: 'hidden', background: 'var(--bg-surface)'}}>
           <img src={imgUrl} alt={food.name} style={{width:'100%', height:'100%', objectFit:'cover'}} />
         </div>
 
-        <div style={{flex:'1 1 340px', display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
-          <div>
+        <div style={{flex:'1 1 300px', minWidth:240, display:'flex', flexDirection:'column', maxHeight:'calc(90vh - 60px)', minHeight:0}}>
+          <div style={{overflowY:'auto', paddingRight:8, minHeight:0, paddingBottom:16}}>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:12}}>
               <div>
                 <span className={`badge ${food.veg ? 'badge-veg' : 'badge-nonveg'}`} style={{marginBottom:8}}>
                   ● {food.veg ? 'VEG' : 'NON-VEG'}
                 </span>
-                <h2 style={{fontSize:24, fontWeight:800, color:'var(--text-primary)'}}>{food.name}</h2>
+            <h2 style={{fontSize:22, fontWeight:800, color:'var(--text-primary)'}}>{food.name}</h2>
               </div>
               <button 
                 onClick={onClose} 
@@ -66,42 +70,42 @@ export default function FoodModal({ food, onClose }){
               </button>
             </div>
 
-            <p className="muted" style={{marginTop:8, fontSize:14, lineHeight:1.6}}>
+            <p className="muted" style={{marginTop:6, fontSize:13, lineHeight:1.5}}>
               {food.description || 'Specially crafted dish with fresh organic ingredients and rich flavors.'}
             </p>
 
-            <div style={{marginTop:16, display:'flex', alignItems:'baseline', gap:12}}>
-              <span style={{fontSize:26, fontWeight:800, color:'var(--accent)'}}>₹{food.price}</span>
+            <div style={{marginTop:12, display:'flex', alignItems:'baseline', gap:12}}>
+              <span style={{fontSize:24, fontWeight:800, color:'var(--accent)'}}>₹{food.price}</span>
               <span className="muted" style={{fontSize:13}}>per portion</span>
             </div>
 
-            <div style={{marginTop:20}}>
+            <div style={{marginTop:14}}>
               <label className="muted" style={{fontSize:13, fontWeight:600}}>Quantity</label>
-              <div style={{display:'flex', alignItems:'center', gap:12, marginTop:8}}>
-                <button className="btn-outline" style={{width:40, height:40, borderRadius:10}} onClick={() => setQty(Math.max(1, qty - 1))}>-</button>
-                <span style={{minWidth:36, textAlign:'center', fontWeight:800, fontSize:18}}>{qty}</span>
-                <button className="btn-outline" style={{width:40, height:40, borderRadius:10}} onClick={() => setQty(qty + 1)}>+</button>
+              <div style={{display:'flex', alignItems:'center', gap:10, marginTop:6}}>
+                <button className="btn-outline" style={{width:36, height:36, borderRadius:8, fontSize:16}} onClick={() => setQty(Math.max(1, qty - 1))}>-</button>
+                <span style={{minWidth:32, textAlign:'center', fontWeight:800, fontSize:16}}>{qty}</span>
+                <button className="btn-outline" style={{width:36, height:36, borderRadius:8, fontSize:16}} onClick={() => setQty(qty + 1)}>+</button>
               </div>
             </div>
 
-            <div style={{marginTop:16}}>
+            <div style={{marginTop:12}}>
               <label className="muted" style={{fontSize:13, fontWeight:600}}>Special instructions (Optional)</label>
               <textarea 
                 className="form-control" 
-                rows={2} 
+                rows={1} 
                 placeholder="E.g., Less spicy, no onions..." 
                 value={notes} 
                 onChange={e => setNotes(e.target.value)}
-                style={{marginTop:6, resize:'none'}}
+                style={{marginTop:4, resize:'none', fontSize:12}}
               />
             </div>
           </div>
 
-          <div style={{display:'flex', gap:12, marginTop:24}}>
-            <button className="btn-accent" style={{flex:1, padding:12}} onClick={handleAdd}>
+          <div style={{display:'flex', flexWrap:'wrap', gap:10, marginTop:16, flexShrink:0, zIndex:1}}>
+            <button className="btn-accent" style={{flex:'1 1 180px', padding:10, minWidth:120, fontSize:13}} onClick={handleAdd}>
               ADD TO CART • ₹{(food.price * qty).toFixed(2)}
             </button>
-            <button className="btn-outline" onClick={onClose}>
+            <button className="btn-outline" style={{flex:'0 1 120px', minWidth:120}} onClick={onClose}>
               CANCEL
             </button>
           </div>

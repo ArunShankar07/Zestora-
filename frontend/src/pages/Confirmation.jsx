@@ -77,6 +77,23 @@ export default function Confirmation(){
           </div>
         </div>
 
+        {/* Restaurant Info */}
+        <div style={{
+          width: '100%',
+          background: 'var(--bg-surface)',
+          padding: 20,
+          borderRadius: 14,
+          border: '1px solid var(--border)',
+          textAlign: 'center'
+        }}>
+          <div style={{fontWeight:800, fontSize:18, marginBottom:8}}>ZESTORA</div>
+          <div style={{display:'flex', flexDirection:'column', gap:6}}>
+            <div className="muted" style={{fontSize:13}}>📍 Nagercoil, Tamil Nadu</div>
+            <div className="muted" style={{fontSize:13}}>📱 +91-XXXX-XXXX-XXX</div>
+            <div className="muted" style={{fontSize:13}}>✉️ info@zestora.com</div>
+          </div>
+        </div>
+
         {/* Action Buttons */}
         <div style={{display:'flex', gap:12, flexWrap:'wrap', justifyContent:'center'}}>
           <a 
